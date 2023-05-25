@@ -14,15 +14,17 @@ The QtAndroidViewShare library is a tool that can be used to connect different c
 
 Platforms
 ---------
+Android
 
 
 Dependencies
 ------------
-
+None
 
 
 Building
 ========
+Qt 6.4
 
 
 Qt Creator
