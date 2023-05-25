@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.qtproject.example.QtAndroidViewShare" android:installLocation="auto" android:versionCode="2" android:versionName="1.0">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true"/>
+    <application android:name="org.qtproject.qt.android.bindings.QtApplication" android:extractNativeLibs="true" android:hardwareAccelerated="true" android:label="QtAndroidViewShare" android:requestLegacyExternalStorage="true" android:allowNativeHeapPointerTagging="false">
+        <activity android:name="org.qtproject.qt.android.bindings.QtActivity" android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|layoutDirection|locale|fontScale|keyboard|keyboardHidden|navigation|mcc|mnc|density" android:label="QtAndroidViewShare" android:launchMode="singleTop" android:screenOrientation="unspecified">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="android.app.lib_name" android:value="QtAndroidViewShare"/>
+            <meta-data android:name="android.app.arguments" android:value=""/>
+            <meta-data android:name="android.app.extract_android_style" android:value="minimal"/>
+            <!-- Beginning of Intent Filters for Sending and Viewing Files -->
+            <intent-filter>
+                 <action android:name="android.intent.action.SEND"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+                 <data android:mimeType="application/pdf"/>
+            </intent-filter>
+            <intent-filter>
+                 <action android:name="android.intent.action.VIEW"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+                 <data android:mimeType="application/pdf"/>
+            </intent-filter>
+            <intent-filter>
+                 <action android:name="android.intent.action.VIEW"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+                 <data android:mimeType="application/pdf"/>
+            </intent-filter>
+            <intent-filter>
+                 <action android:name="android.intent.action.VIEW"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+                 <data android:mimeType="application/pdf"/>
+            </intent-filter>
+			
+			   <intent-filter>
+                 <action android:name="android.intent.action.SEND"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+                 <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                 <action android:name="android.intent.action.VIEW"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+                 <data android:mimeType="image/png"/>
+            </intent-filter>
+            <intent-filter>
+                 <action android:name="android.intent.action.VIEW"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+                 <data android:mimeType="image/jpg"/>
+            </intent-filter>
+            <intent-filter>
+                 <action android:name="android.intent.action.VIEW"/>
+                 <category android:name="android.intent.category.DEFAULT"/>
+                 <data android:mimeType="image/jpeg"/>
+            </intent-filter>
+        </activity>
+
+                <provider android:name="androidx.core.content.FileProvider" android:authorities="org.shareluma.shareutils.fileprovider" android:exported="false" android:grantUriPermissions="true">
+          <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/filepaths"/>
+        </provider>
+    </application>
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+   <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+            <data android:mimeType="*/*"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.EDIT"/>
+            <data android:mimeType="*/*"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SEND"/>
+            <data android:mimeType="*/*"/>
+        </intent>
+    </queries>
+
+        <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.GLOBAL_SEARCH"/>
+<uses-permission android:name="android.permission.READ_SOCIAL_STREAM"/>
+</manifest>
