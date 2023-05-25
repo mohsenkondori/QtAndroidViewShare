@@ -24,7 +24,19 @@ None
 
 Building
 ========
-Qt 6.4
+*Edit the gradle.properties file according to the compiler and parameters related to your system.
+
+androidBuildToolsVersion=31.0.0
+androidCompileSdkVersion=31
+androidNdkVersion=23.1.7779620
+buildDir=build
+qt5AndroidDir=F:/Qt/6.4.3/android_arm64_v8a/src/android/java
+qtAndroidDir=F:/Qt/6.4.3/android_arm64_v8a/src/android/java
+qtMinSdkVersion=23
+qtTargetAbiList=arm64-v8a
+qtTargetSdkVersion=30
+
+tested on Qt 6.4.3
 
 
 Qt Creator
